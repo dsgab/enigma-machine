@@ -1,4 +1,4 @@
 *.o
 output
 output.txt
-./testes
+teste*.c
