@@ -10,20 +10,14 @@ FILE* encryptionOutputFile;
 char encryptionOutputFileName[] = "output.txt";
 int messageNumber = 1;
 
-void initializeOutputFile(void)
-{
-    if(openOutputFile() == EXIT_FAILURE) exit(1);
-}
-
 int openOutputFile(void)
 {
     encryptionOutputFile = fopen(encryptionOutputFileName, "w");
     if(!encryptionOutputFile)
     {
         printf("Could not open output file.");
-        return EXIT_FAILURE;
+        exit(1);
     }
-    return EXIT_SUCCESS;
 }
 
 void closeOutputFile(void)

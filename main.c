@@ -7,7 +7,7 @@
 int main(void)
 {
     changeCursorVisibility(DISAPPEAR);
-    initializeOutputFile();
+    openOutputFile();
     while(1)
     {
         printMenu();
