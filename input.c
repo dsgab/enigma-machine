@@ -22,28 +22,28 @@ int checkInput(void)
     char character = getInput();
     if(isCharacterLetter(character)) saveLetter(character);
     if(character == ESPACE_KEY) startNewWord();
-    if(character == RETURN_KEY) returnKeyPressed();
+    if(character == RETURN_KEY) startNewMessage();
     if(character == ESCAPE_KEY) return saveAndQuitLoop();
     return 0;
 }
 
 int saveAndQuitLoop(void)
 {
-    startNewMessage();
+    startWritingNewMessage();
     saveWordToFile();
     return 1;
 }
 
 void startNewWord(void)
 {
-    startNewMessage();
+    startWritingNewMessage();
     saveWordToFile();
     resetWord();
 }
 
-void returnKeyPressed(void)
+void startNewMessage(void)
 {
-    startNewMessage();
+    startWritingNewMessage();
     saveWordToFile();
     resetMessageWordCount();
     resetWord();

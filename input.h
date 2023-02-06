@@ -25,7 +25,11 @@ int saveAndQuitLoop(void);
  *  @return Void.
 */
 void startNewWord(void);
-void returnKeyPressed(void);
+
+/** @brief Used to start saving a new message.
+ *  @return Void.
+*/
+void startNewMessage(void);
 
 /** @brief Resets the messageWordCount variable.
  *  @return Void.

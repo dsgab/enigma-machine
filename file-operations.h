@@ -11,5 +11,5 @@ void initializeOutputFile(void);
 int openOutputFile(void);
 void closeOutputFile(void);
 
-void startNewMessage(void);
+void startWritingNewMessage(void);
 void saveWordToFile(void);

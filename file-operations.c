@@ -31,7 +31,7 @@ void closeOutputFile(void)
     if(fclose(encryptionOutputFile) == EOF) puts("Output file could not be closed.");
 }
 
-void startNewMessage(void)
+void startWritingNewMessage(void)
 {
     if(messageWordCount != 0 || isStringEmpty(word)) return;
     if(messageNumber > 1) fputs("\n", encryptionOutputFile);    /* Only writes new line to output file if it's not the first message */
