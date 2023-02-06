@@ -10,7 +10,7 @@ FILE* encryptionOutputFile;
 char encryptionOutputFileName[] = "output.txt";
 int messageNumber = 1;
 
-int openOutputFile(void)
+void openOutputFile(void)
 {
     encryptionOutputFile = fopen(encryptionOutputFileName, "w");
     if(!encryptionOutputFile)

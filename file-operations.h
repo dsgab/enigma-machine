@@ -10,7 +10,7 @@
 /** @brief Opens output file and checks for errors.
  *  @return Void.
 */
-int openOutputFile(void);
+void openOutputFile(void);
 
 /** @brief Closes output file and checks for errors.
  *  @return Void.
