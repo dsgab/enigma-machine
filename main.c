@@ -16,7 +16,7 @@ int main(void)
     while(1)
     {
         printKeyboardMenu();
-        if(checkInput() == 1) break;
+        if(checkInput() == EXIT_LOOP) break;
     }
     changeCursorVisibility(REAPPEAR);
     clearScreen();

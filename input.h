@@ -7,6 +7,8 @@
 
 #pragma once
 
+#define EXIT_LOOP 1
+
 extern int messageWordCount;
 extern char word[300];
 extern char lastLetter;
