@@ -11,7 +11,6 @@ int main(void)
     changeCursorVisibility(DISAPPEAR);
     openOutputFile();
     printMenu();
-    clearScreen();
     while(1)
     {
         printKeyboardMenu();
