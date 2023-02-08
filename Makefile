@@ -1,11 +1,17 @@
-output: main.o ui.o file-operations.o strings.o input.o
-	gcc main.o ui.o file-operations.o strings.o input.o -o output
+output: main.o keyboard-ui.o general-use-ui.o main-menu-ui.o file-operations.o strings.o input.o
+	gcc main.o keyboard-ui.o general-use-ui.o main-menu-ui.o file-operations.o strings.o input.o -o output
 
 main.o: main.c
 	gcc -c main.c -pedantic -Wall -Werror -Wextra
 
-ui.o: ui.c ui.h
-	gcc -c ui.c -pedantic -Wall -Werror -Wextra
+keyboard-ui.o: ./ui/keyboard-ui.c ./ui/keyboard-ui.h
+	gcc -c ./ui/keyboard-ui.c -pedantic -Wall -Werror -Wextra
+
+general-use-ui.o: ./ui/general-use-ui.c ./ui/general-use-ui.h
+	gcc -c ./ui/general-use-ui.c -pedantic -Wall -Werror -Wextra
+
+main-menu-ui.o: ./ui/main-menu-ui.c ./ui/main-menu-ui.h
+	gcc -c ./ui/main-menu-ui.c -pedantic -Wall -Werror -Wextra
 
 file-operations.o: file-operations.c file-operations.h
 	gcc -c file-operations.c -pedantic -Wall -Werror -Wextra
