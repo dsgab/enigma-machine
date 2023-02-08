@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include "input.h"
-#include "ui.h"
+#include "./ui/keyboard-ui.h"
 #include "strings.h"
 #include "file-operations.h"
 

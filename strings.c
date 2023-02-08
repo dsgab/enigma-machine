@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include "strings.h"
-#include "ui.h"
+#include "./ui/keyboard-ui.h"
 #include "input.h"
 
 bool isStringEmpty(char* string)

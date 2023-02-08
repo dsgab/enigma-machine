@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "file-operations.h"
-#include "ui.h"
+#include "./ui/keyboard-ui.h"
 #include "strings.h"
 #include "input.h"
 
