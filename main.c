@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "ui.h"
+#include "./ui/keyboard-ui.h"
+#include "./ui/main-menu-ui.h"
+#include "./ui/general-use-ui.h"
 #include "file-operations.h"
 #include "input.h"
 
@@ -8,9 +10,12 @@ int main(void)
 {
     changeCursorVisibility(DISAPPEAR);
     openOutputFile();
+    clearScreen();
+    printMenu();
+    clearScreen();
     while(1)
     {
-        printMenu();
+        printKeyboardMenu();
         if(checkInput() == 1) break;
     }
     changeCursorVisibility(REAPPEAR);
