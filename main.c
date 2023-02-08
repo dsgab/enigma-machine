@@ -10,7 +10,6 @@ int main(void)
 {
     changeCursorVisibility(DISAPPEAR);
     openOutputFile();
-    clearScreen();
     printMenu();
     clearScreen();
     while(1)
