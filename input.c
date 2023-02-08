@@ -31,7 +31,7 @@ int saveAndQuitLoop(void)
 {
     startWritingNewMessage();
     saveWordToFile();
-    return EXIT_LOOP;
+    return EXIT_KEYBOARD;
 }
 
 void startNewWord(void)

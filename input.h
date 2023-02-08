@@ -7,7 +7,7 @@
 
 #pragma once
 
-#define EXIT_LOOP 1
+#define EXIT_KEYBOARD 1
 
 extern int messageWordCount;
 extern char word[300];
