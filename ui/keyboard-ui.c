@@ -3,20 +3,21 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
-#include "ui.h"
-#include "file-operations.h"
-#include "strings.h"
-#include "input.h"
+#include "keyboard-ui.h"
+#include "general-use-ui.h"
+#include "../file-operations.h"
+#include "../strings.h"
+#include "../input.h"
 
 char* keyboardLayoutRows[] = {"QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"};    /* Array of strings containing the QWERTY keyboard layout rows */
 unsigned char keyboardLayoutRowOffsets[] = {0, 2, 6};   /* Number of spaces in the beginning of each keyboard row */
 
-void printMenu(void)
+void printKeyboardMenu(void)
 {
     clearScreen();
     printKeyboard();
-    puts("");
-    puts("");
+    printNewLine();
+    printNewLine();
     printf("Encrypted word: %s\n", word);
     puts("Press space to write a new word.\nPress enter to write a new message.\nPress ESC to save and quit.");
 }
@@ -48,34 +49,6 @@ void printKeyboardRowLetter(int asciiValue)
     if(tolower(asciiValue) == tolower(lastLetter)) printf(RED);
     printf("%c", asciiValue);
     printf(RESET_COLOR);
-}
-
-void printNewLine(void)
-{
-    putchar('\n');
-}
-
-void printSpaces(int numberOfSpaces)
-{
-    for(int i = 0; i < numberOfSpaces; i++) putchar(' ');
-}
-
-void clearScreen(void)
-{
-    system("clear");
-}
-
-void changeCursorVisibility(enum state cursorState)
-{
-    switch(cursorState)
-    {
-        case DISAPPEAR:
-            system("echo -e \"\\e]12;black\\a\"");
-            break;
-        case REAPPEAR:
-            system("echo -e \"\\e]12;white\\a\"");
-            break;
-    }
 }
 
 /*
