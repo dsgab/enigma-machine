@@ -7,7 +7,7 @@
 /** @brief Prints the main menu to the stdout.
  *  @return Void.
 */
-void printMenu(void);
+void printMainMenu(void);
 
 /** @brief Prints an enigma ascii art to the stdout.
  *  @return Void.

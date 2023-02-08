@@ -10,7 +10,7 @@ int main(void)
 {
     changeCursorVisibility(DISAPPEAR);
     openOutputFile();
-    printMenu();
+    printMainMenu();
     while(1)
     {
         printKeyboardMenu();

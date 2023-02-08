@@ -10,7 +10,7 @@
 #include "../input.h"
 #include "../file-operations.h"
 
-void printMenu(void)
+void printMainMenu(void)
 {
     clearScreen();
     printAsciiArt();
