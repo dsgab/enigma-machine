@@ -4,6 +4,9 @@
 
 #pragma once
 
+#define RESET_COLOR "\033[0m"
+#define RED "\033[31m"
+
 enum state { DISAPPEAR, REAPPEAR };
 
 /** @brief Prints a new line character to the stdout.

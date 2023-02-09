@@ -7,9 +7,6 @@
 
 #pragma once
 
-#define RESET_COLOR "\033[0m"
-#define RED "\033[31m"
-
 /** @brief Prints the keybaord menu to the stdout.
  *  @return Void.
 */
