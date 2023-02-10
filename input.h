@@ -16,7 +16,7 @@ extern char lastLetter;
 /** @brief Checks the last user input and calls functions accordingly.
  *  @return Void.
 */
-int checkInput(void);
+int checkKeyboardInput(void);
 
 /** @brief Save the last word and starts quitting the program.
  *  @return Void.

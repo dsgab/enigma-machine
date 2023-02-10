@@ -18,7 +18,7 @@ int messageWordCount = 0;   /* Number of words in the current message being type
 char word[300];     /* Word that's being currently typed */
 char lastLetter;    /* Last letter inputted by the user */
 
-int checkInput(void)
+int checkKeyboardInput(void)
 {
     changeLetterVisibility(INVISIBLE);
     char character = getInput();
