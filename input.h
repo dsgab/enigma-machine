@@ -14,15 +14,24 @@ extern int messageWordCount;
 extern char word[300];
 extern char lastLetter;
 
-/** @brief Checks the last user input and calls functions accordingly.
+/** @brief Checks the last user input when in the keyboard and calls functions accordingly.
  *  @return Void.
 */
 int checkKeyboardInput(void);
 
+/** @brief Checks the last user input when in the main menu and calls functions accordingly.
+ *  @return Void.
+*/
 int checkMainMenuInput(void);
 
+/** @brief Loops the printKeyboardMenu and the checkKeyboardInput functions.
+ *  @return Void.
+*/
 void goToKeyboard(void);
 
+/** @brief Prints the settings and checks for user input.
+ *  @return Void.
+*/
 void goToSettings(void);
 
 /** @brief Save the last word and starts quitting the program.
