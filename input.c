@@ -20,9 +20,7 @@ char lastLetter;    /* Last letter inputted by the user */
 
 int checkKeyboardInput(void)
 {
-    changeLetterVisibility(INVISIBLE);
     char character = getInput();
-    changeLetterVisibility(VISIBLE);
     if(isCharacterLetter(character)) saveLetter(character);
     if(character == ESPACE_KEY) startNewWord();
     if(character == RETURN_KEY) startNewMessage();
@@ -71,9 +69,11 @@ void resetWord(void)
 
 char getInput(void)
 {
+    changeLetterVisibility(INVISIBLE);
     char answer = 'a';
     system("/bin/stty raw");
     answer = getc(stdin);
     system("/bin/stty cooked");
+    changeLetterVisibility(VISIBLE);
     return answer;
 }
