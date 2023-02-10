@@ -8,6 +8,7 @@
 #pragma once
 
 #define EXIT_KEYBOARD 1
+#define EXIT_MAIN_MENU 1
 
 extern int messageWordCount;
 extern char word[300];
@@ -17,6 +18,12 @@ extern char lastLetter;
  *  @return Void.
 */
 int checkKeyboardInput(void);
+
+int checkMainMenuInput(void);
+
+void goToKeyboard(void);
+
+void goToSettings(void);
 
 /** @brief Save the last word and starts quitting the program.
  *  @return Void.

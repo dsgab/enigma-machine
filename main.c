@@ -10,11 +10,10 @@ int main(void)
 {
     changeCursorVisibility(DISAPPEAR);
     openOutputFile();
-    printMainMenu();
     while(1)
     {
-        printKeyboardMenu();
-        if(checkKeyboardInput() == EXIT_KEYBOARD) break;
+        printMainMenu();
+        if(checkMainMenuInput() == EXIT_MAIN_MENU) break;
     }
     changeCursorVisibility(REAPPEAR);
     clearScreen();

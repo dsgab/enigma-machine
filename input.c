@@ -28,6 +28,38 @@ int checkKeyboardInput(void)
     return 0;
 }
 
+int checkMainMenuInput(void)
+{
+    switch(getInput())
+    {
+        case '1':
+            goToKeyboard();
+            break;
+        case '2':
+            goToSettings();
+            break;
+        case '3':
+            return EXIT_MAIN_MENU;
+    }
+    return 0;
+}
+
+void goToKeyboard(void)
+{
+    while(1)
+    {
+        printKeyboardMenu();
+        if(checkKeyboardInput() == EXIT_KEYBOARD) break;
+    }
+}
+
+void goToSettings(void)
+{
+    clearScreen();
+    puts("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+    getInput();
+}
+
 int saveAndQuitLoop(void)
 {
     startWritingNewMessage();
