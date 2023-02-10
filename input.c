@@ -7,6 +7,7 @@
 #include "./ui/keyboard-ui.h"
 #include "strings.h"
 #include "file-operations.h"
+#include "./ui/general-use-ui.h"
 
 #define ESCAPE_KEY 27
 #define ESPACE_KEY 32
@@ -19,7 +20,9 @@ char lastLetter;    /* Last letter inputted by the user */
 
 int checkInput(void)
 {
+    changeLetterVisibility(INVISIBLE);
     char character = getInput();
+    changeLetterVisibility(VISIBLE);
     if(isCharacterLetter(character)) saveLetter(character);
     if(character == ESPACE_KEY) startNewWord();
     if(character == RETURN_KEY) startNewMessage();

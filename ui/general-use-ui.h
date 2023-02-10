@@ -6,8 +6,10 @@
 
 #define RESET_COLOR "\033[0m"
 #define RED "\033[31m"
+#define BLACK "\033[30m"
 
-enum state { DISAPPEAR, REAPPEAR };
+enum cursorState { DISAPPEAR, REAPPEAR };
+enum letterVisibility { VISIBLE, INVISIBLE };
 
 /** @brief Prints a new line character to the stdout.
  *  @return Void.
@@ -29,7 +31,13 @@ void printSpaces(int numberOfSpaces);
 void clearScreen(void);
 
 /** @brief Changes the state of the cursor visibility.
- *  @param cursorState What cursor state to change to; either "DISAPPEAR" or "REAPPEAR".
+ *  @param state What cursor state to change to; either "DISAPPEAR" or "REAPPEAR".
  *  @return Void.
 */
-void changeCursorVisibility(enum state cursorState);
+void changeCursorVisibility(enum cursorState state);
+
+/** @brief Changes the visibility of the next printed characters.
+ *  @param visibility What visibility to change to; either "VISIBLE" or "INVISIBLE".
+ *  @return Void.
+*/
+void changeLetterVisibility(enum letterVisibility visibility);
