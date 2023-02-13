@@ -5,7 +5,7 @@
 #include <stdbool.h>
 #include "encryption.h"
 
-void allocateRotor(rotor* rotorName)
+ROTOR* allocateRotor()
 {
-    rotorName = (rotor*) malloc(sizeof(rotor));
+    return malloc(sizeof(ROTOR));
 }

@@ -6,11 +6,12 @@
 
 #pragma once
 
-typedef struct _rotor
+typedef struct _ROTOR
 {
-    char lettersToAdvance[26];
+    short lettersToAdvance[26];
     int notchPosition;
+    struct _ROTOR* nextRotor;
 }
-rotor;
+ROTOR;
 
-rotor rotorOne;
+ROTOR* allocateRotor();

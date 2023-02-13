@@ -1,5 +1,5 @@
-output: main.o keyboard-ui.o general-use-ui.o main-menu-ui.o file-operations.o strings.o input.o
-	gcc main.o keyboard-ui.o general-use-ui.o main-menu-ui.o file-operations.o strings.o input.o -o output
+output: main.o keyboard-ui.o general-use-ui.o main-menu-ui.o file-operations.o strings.o input.o encryption.o
+	gcc main.o keyboard-ui.o general-use-ui.o main-menu-ui.o file-operations.o strings.o input.o encryption.o -o output
 
 main.o: main.c
 	gcc -c main.c -pedantic -Wall -Werror -Wextra
