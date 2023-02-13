@@ -7,5 +7,5 @@
 
 void allocateRotor(rotor* rotorName)
 {
-    rotorName = malloc(sizeof(rotor));
+    rotorName = (rotor*) malloc(sizeof(rotor));
 }
