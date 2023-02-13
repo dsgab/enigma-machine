@@ -22,5 +22,8 @@ strings.o: strings.c strings.h
 input.o: input.c input.h
 	gcc -c input.c -pedantic -Wall -Werror -Wextra
 
+encryption.o: encryption.c encryption.h
+	gcc -c encryption.c -pedantic -Wall -Werror -Wextra
+
 clean:
 	rm *.o output
