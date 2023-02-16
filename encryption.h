@@ -22,3 +22,9 @@ char encryptLetter(char letter);
 void initializeRotors(void);
 
 void rotateRotor(ROTOR* rotor);
+
+void goThroughRotors(ROTOR* first, ROTOR* second, ROTOR* third);
+
+void goThroughRotor(ROTOR* rotor);
+
+void changeEncryptedLetter(int offset);
