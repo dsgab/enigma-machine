@@ -8,6 +8,7 @@
 #include "strings.h"
 #include "file-operations.h"
 #include "./ui/general-use-ui.h"
+#include "encryption.h"
 
 #define ESCAPE_KEY 27
 #define ESPACE_KEY 32
@@ -21,7 +22,7 @@ char lastLetter;    /* Last letter inputted by the user */
 int checkKeyboardInput(void)
 {
     char character = getInput();
-    if(isCharacterLetter(character)) saveLetter(character);
+    if(isCharacterLetter(character)) saveLetter(encryptLetter(character));
     if(character == ESPACE_KEY) startNewWord();
     if(character == RETURN_KEY) startNewMessage();
     if(character == ESCAPE_KEY) return saveAndQuitLoop();
@@ -46,6 +47,7 @@ int checkMainMenuInput(void)
 
 void goToKeyboard(void)
 {
+    initializeRotors();
     while(1)
     {
         printKeyboardMenu();

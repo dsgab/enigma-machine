@@ -9,9 +9,16 @@
 typedef struct _ROTOR
 {
     short lettersToAdvance[26];
-    int notchPosition;
+    short currentPosition;
+    short notchPosition;
     struct _ROTOR* nextRotor;
 }
 ROTOR;
 
-ROTOR* allocateRotor();
+ROTOR* allocateRotor(void);
+
+char encryptLetter(char letter);
+
+void initializeRotors(void);
+
+void updateRotorCurrentPosition(ROTOR* rotor);
