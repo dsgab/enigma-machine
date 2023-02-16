@@ -8,7 +8,14 @@
 
 char currentEncryptedLetter;
 ROTOR* firstRotor = NULL;
-int firstRotorOffset[26] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25};
+ROTOR* secondRotor = NULL;
+ROTOR* thirdRotor = NULL;
+short firstRotorOffset[26] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25};
+short secondRotorOffset[26] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25};
+short thirdRotorOffset[26] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25};
+short firstRotorNotch = 0;
+short secondRotorNotch = 0;
+short thirdRotorNotch = 0;
 
 ROTOR* allocateRotor(void)
 {
