@@ -48,7 +48,7 @@ void goThroughRotor(ROTOR* rotor)
     changeEncryptedLetter(rotor->lettersToAdvance[rotor->currentPosition]);
 }
 
-void changeEncryptedLetter(int offset)
+void changeEncryptedLetter(short offset)
 {
     int letterValue = indexInAlphabet(currentEncryptedLetter);
     currentEncryptedLetter -= letterValue;

@@ -27,4 +27,4 @@ void goThroughRotors(ROTOR* first, ROTOR* second, ROTOR* third);
 
 void goThroughRotor(ROTOR* rotor);
 
-void changeEncryptedLetter(int offset);
+void changeEncryptedLetter(short offset);
