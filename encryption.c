@@ -18,7 +18,7 @@ char encryptLetter(char letter)
     bool isLetterUpper = isupper(letter);
     letter -= isLetterUpper ? 'A' : 'a';
     letter += firstRotor->lettersToAdvance[firstRotor->currentPosition];
-    updateRotorCurrentPosition(firstRotor);
+    rotateRotor(firstRotor);
     letter %= 26;
     letter += isLetterUpper ? 'A' : 'a';
     return letter;
@@ -31,8 +31,8 @@ void initializeRotors(void)
     firstRotor->currentPosition = 0;
 }
 
-void updateRotorCurrentPosition(ROTOR* rotor)
+void rotateRotor(ROTOR* rotor)
 {
     rotor->currentPosition++;
-    rotor->currentPosition %= 26;   
+    rotor->currentPosition %= 26;
 }

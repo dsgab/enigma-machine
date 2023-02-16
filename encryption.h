@@ -21,4 +21,4 @@ char encryptLetter(char letter);
 
 void initializeRotors(void);
 
-void updateRotorCurrentPosition(ROTOR* rotor);
+void rotateRotor(ROTOR* rotor);
