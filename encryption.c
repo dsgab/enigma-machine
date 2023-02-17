@@ -17,11 +17,6 @@ short firstRotorNotch = 0;
 short secondRotorNotch = 0;
 short thirdRotorNotch = 0;
 
-ROTOR* allocateRotor(void)
-{
-    return malloc(sizeof(ROTOR));
-}
-
 char encryptLetter(char letter)
 {
     currentEncryptedLetter = letter;
@@ -39,12 +34,12 @@ void initializeRotors(void)
 
 void initializeRotor(ROTOR** rotor, short* rotorOffset, ROTOR* nextRotor, short notchPosition)
 {
-    ROTOR* rotorCopy = allocateRotor();
-    rotorCopy->lettersToAdvance = rotorOffset;
-    rotorCopy->currentPosition = 0;
-    rotorCopy->nextRotor = nextRotor;
-    rotorCopy->notchPosition = notchPosition;
-    *rotor = rotorCopy;
+    ROTOR* temporaryRotor = allocateRotor();
+    temporaryRotor->lettersToAdvance = rotorOffset;
+    temporaryRotor->currentPosition = 0;
+    temporaryRotor->nextRotor = nextRotor;
+    temporaryRotor->notchPosition = notchPosition;
+    *rotor = temporaryRotor;
 }
 
 void rotateRotor(ROTOR* rotor)
@@ -72,4 +67,9 @@ void changeEncryptedLetter(short offset)
     letterValue += offset;
     letterValue %= 26;
     currentEncryptedLetter += letterValue;
+}
+
+ROTOR* allocateRotor(void)
+{
+    return malloc(sizeof(ROTOR));
 }

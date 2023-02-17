@@ -15,8 +15,6 @@ typedef struct _ROTOR
 }
 ROTOR;
 
-ROTOR* allocateRotor(void);
-
 char encryptLetter(char letter);
 
 void initializeRotors(void);
@@ -30,3 +28,5 @@ void goThroughRotors(ROTOR* first, ROTOR* second, ROTOR* third);
 void goThroughRotor(ROTOR* rotor);
 
 void changeEncryptedLetter(short offset);
+
+ROTOR* allocateRotor(void);
