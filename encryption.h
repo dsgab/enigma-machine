@@ -27,6 +27,8 @@ void goThroughRotors(ROTOR* first, ROTOR* second, ROTOR* third);
 
 void goThroughRotor(ROTOR* rotor);
 
+short calculateLetterPosition(short rotorCurrentPosition, char inputLetter);
+
 void changeEncryptedLetter(short offset);
 
 ROTOR* allocateRotor(void);

@@ -6,6 +6,7 @@
 #include "encryption.h"
 #include "strings.h"
 
+const int LETTER_COUNT = 'Z' - 'A' + 1;
 char currentEncryptedLetter;
 ROTOR* firstRotor = NULL;
 ROTOR* secondRotor = NULL;
@@ -57,7 +58,12 @@ void goThroughRotors(ROTOR* first, ROTOR* second, ROTOR* third)
 
 void goThroughRotor(ROTOR* rotor)
 {
-    changeEncryptedLetter(rotor->lettersToAdvance[(rotor->currentPosition + indexInAlphabet(currentEncryptedLetter))%26]);
+    changeEncryptedLetter(rotor->lettersToAdvance[calculateLetterPosition(rotor->currentPosition, currentEncryptedLetter)]);
+}
+
+short calculateLetterPosition(short rotorCurrentPosition, char inputLetter)
+{
+    return (rotorCurrentPosition + indexInAlphabet(inputLetter)) % LETTER_COUNT;
 }
 
 void changeEncryptedLetter(short offset)
