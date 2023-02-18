@@ -73,3 +73,10 @@ ROTOR* allocateRotor(void)
 {
     return malloc(sizeof(ROTOR));
 }
+
+void freeRotors(void)
+{
+    free(firstRotor);
+    free(secondRotor);
+    free(thirdRotor);
+}

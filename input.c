@@ -53,6 +53,7 @@ void goToKeyboard(void)
         printKeyboardMenu();
         if(checkKeyboardInput() == EXIT_KEYBOARD) break;
     }
+    freeRotors();
 }
 
 void goToSettings(void)

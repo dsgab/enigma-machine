@@ -30,3 +30,5 @@ void goThroughRotor(ROTOR* rotor);
 void changeEncryptedLetter(short offset);
 
 ROTOR* allocateRotor(void);
+
+void freeRotors(void);
