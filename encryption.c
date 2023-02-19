@@ -22,6 +22,8 @@ char encryptLetter(char letter)
 {
     currentEncryptedLetter = letter;
     goThroughRotor(firstRotor);
+    goThroughRotor(secondRotor);
+    goThroughRotor(thirdRotor);
     rotateRotor(firstRotor);
     return currentEncryptedLetter;
 }
