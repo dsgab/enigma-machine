@@ -49,6 +49,7 @@ void rotateRotor(ROTOR* rotor)
 {
     rotor->currentPosition++;
     rotor->currentPosition %= 26;
+    if(rotor->currentPosition == rotor->notchPosition && rotor->nextRotor != NULL) rotateRotor(rotor->nextRotor);
 }
 
 void goThroughRotors(ROTOR* first, ROTOR* second, ROTOR* third)
