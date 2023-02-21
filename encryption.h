@@ -34,3 +34,5 @@ void changeEncryptedLetter(short offset);
 ROTOR* allocateRotor(void);
 
 void freeRotors(void);
+
+short rotorCurrentPosition(ROTOR* rotor);
