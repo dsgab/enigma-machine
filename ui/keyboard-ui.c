@@ -27,7 +27,7 @@ void printKeyboardMenu(void)
 void printRotors(void)
 {
     puts("Rotors positions:");
-    printf("           ");
+    printf("\n           ");
     printf("%2d    %2d    %2d\n", rotorCurrentPosition(thirdRotor), rotorCurrentPosition(secondRotor), rotorCurrentPosition(firstRotor));
     printNewLine();
 }
