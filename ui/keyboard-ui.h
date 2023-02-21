@@ -12,6 +12,8 @@
 */
 void printKeyboardMenu(void);
 
+void printRotors(void);
+
 /** @brief Prints each one of the three rows of the keyboard.
  *  @return Void.
 */

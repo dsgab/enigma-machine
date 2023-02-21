@@ -16,11 +16,20 @@ unsigned char keyboardLayoutRowOffsets[] = {0, 2, 6};   /* Number of spaces in t
 void printKeyboardMenu(void)
 {
     clearScreen();
+    printRotors();
     printKeyboard();
     printNewLine();
     printNewLine();
     printf("Encrypted word: %s\n", word);
     puts("Press space to write a new word.\nPress enter to write a new message.\nPress ESC to save and quit.");
+}
+
+void printRotors(void)
+{
+    puts("Rotors positions:");
+    printf("           ");
+    printf("%2d    %2d    %2d\n", rotorCurrentPosition(thirdRotor), rotorCurrentPosition(secondRotor), rotorCurrentPosition(firstRotor));
+    printNewLine();
 }
 
 void printKeyboard(void)
