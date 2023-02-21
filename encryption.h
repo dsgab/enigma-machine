@@ -35,6 +35,8 @@ short calculateLetterPosition(short rotorCurrentPosition, char inputLetter);
 
 void changeEncryptedLetter(short offset);
 
+char reflectLetter(char letterToBeReflected);
+
 ROTOR* allocateRotor(void);
 
 void freeRotors(void);
