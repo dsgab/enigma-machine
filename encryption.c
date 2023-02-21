@@ -88,3 +88,8 @@ void freeRotors(void)
     free(secondRotor);
     free(thirdRotor);
 }
+
+short rotorCurrentPosition(ROTOR* rotor)
+{
+    return (rotor->currentPosition) + 1;
+}
