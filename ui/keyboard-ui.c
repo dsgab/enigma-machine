@@ -8,6 +8,7 @@
 #include "../file-operations.h"
 #include "../strings.h"
 #include "../input.h"
+#include "../encryption.h"
 
 char* keyboardLayoutRows[] = {"QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"};    /* Array of strings containing the QWERTY keyboard layout rows */
 unsigned char keyboardLayoutRowOffsets[] = {0, 2, 6};   /* Number of spaces in the beginning of each keyboard row */

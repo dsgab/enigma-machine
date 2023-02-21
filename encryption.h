@@ -15,6 +15,10 @@ typedef struct _ROTOR
 }
 ROTOR;
 
+extern ROTOR* firstRotor;
+extern ROTOR* secondRotor;
+extern ROTOR* thirdRotor;
+
 char encryptLetter(char letter);
 
 void initializeRotors(void);
