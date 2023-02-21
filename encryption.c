@@ -73,7 +73,7 @@ void changeEncryptedLetter(short offset)
     int letterValue = indexInAlphabet(currentEncryptedLetter);
     currentEncryptedLetter -= letterValue;
     letterValue += offset;
-    letterValue %= 26;
+    letterValue %= LETTER_COUNT;
     currentEncryptedLetter += letterValue;
 }
 
