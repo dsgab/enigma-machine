@@ -27,3 +27,6 @@ encryption.o: encryption.c encryption.h
 
 clean:
 	rm *.o output
+
+debug:
+	gcc main.o keyboard-ui.o general-use-ui.o main-menu-ui.o file-operations.o strings.o input.o encryption.o -g3 -DDEBUG -o debug_output
