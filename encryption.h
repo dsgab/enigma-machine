@@ -8,7 +8,8 @@
 
 typedef struct _ROTOR
 {
-    short *lettersToAdvance;
+    short* inLettersToAdvance;
+    short* outLettersToAdvance;
     short currentPosition;
     short notchPosition;
     struct _ROTOR* nextRotor;
