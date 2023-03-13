@@ -24,7 +24,7 @@ char encryptLetter(char letter);
 
 void initializeRotors(void);
 
-void initializeRotor(ROTOR** rotor, short* rotorOffset, ROTOR* nextRotor, short notchPosition);
+void initializeRotor(ROTOR** rotor, short* rotorOffsetIn, short* rotorOffsetOut, ROTOR* nextRotor, short notchPosition);
 
 void rotateRotor(ROTOR* rotor);
 
