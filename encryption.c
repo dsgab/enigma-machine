@@ -23,7 +23,9 @@ short thirdRotorNotch = 0;
 char encryptLetter(char letter)
 {
     currentEncryptedLetter = letter;
+    goThroughRotor(firstRotor);
     currentEncryptedLetter = reflectLetter(currentEncryptedLetter);
+    returnThroughRotor(firstRotor);
     rotateRotor(firstRotor);
     return currentEncryptedLetter;
 }
@@ -58,6 +60,11 @@ void goThroughRotors(ROTOR* first, ROTOR* second, ROTOR* third)
     goThroughRotor(first);
     goThroughRotor(second);
     goThroughRotor(third);
+}
+
+void returnThroughRotor(ROTOR* rotor)
+{
+    changeEncryptedLetter(rotor->outLettersToAdvance[calculateLetterPosition(rotor->currentPosition, currentEncryptedLetter)]);
 }
 
 void goThroughRotor(ROTOR* rotor)
