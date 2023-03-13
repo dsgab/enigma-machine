@@ -62,7 +62,7 @@ void goThroughRotors(ROTOR* first, ROTOR* second, ROTOR* third)
 
 void goThroughRotor(ROTOR* rotor)
 {
-    changeEncryptedLetter(rotor->lettersToAdvance[calculateLetterPosition(rotor->currentPosition, currentEncryptedLetter)]);
+    changeEncryptedLetter(rotor->inLettersToAdvance[calculateLetterPosition(rotor->currentPosition, currentEncryptedLetter)]);
 }
 
 short calculateLetterPosition(short rotorCurrentPosition, char inputLetter)
