@@ -30,9 +30,11 @@ void rotateRotor(ROTOR* rotor);
 
 void goThroughRotors(ROTOR* first, ROTOR* second, ROTOR* third);
 
-void returnThroughRotor(ROTOR* rotor);
+void returnThroughRotors(ROTOR* first, ROTOR* second, ROTOR* third);
 
 void goThroughRotor(ROTOR* rotor);
+
+void returnThroughRotor(ROTOR* rotor);
 
 short calculateLetterPosition(short rotorCurrentPosition, char inputLetter);
 
