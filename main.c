@@ -10,6 +10,7 @@ int main(void)
 {
     changeCursorVisibility(DISAPPEAR);
     openOutputFile();
+    debugFile = fopen(debugFileName, "w");
     while(1)
     {
         printMainMenu();

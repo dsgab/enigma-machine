@@ -7,6 +7,9 @@
 
 #pragma once
 
+extern FILE* debugFile;
+extern char debugFileName[];
+
 /** @brief Opens output file and checks for errors.
  *  @return Void.
 */

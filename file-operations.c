@@ -6,6 +6,8 @@
 #include "strings.h"
 #include "input.h"
 
+FILE* debugFile;
+char debugFileName[] = "debug.txt";
 FILE* encryptionOutputFile;
 char encryptionOutputFileName[] = "output.txt";
 int messageNumber = 1;
