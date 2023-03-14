@@ -115,7 +115,7 @@ void freeRotors(void)
     free(thirdRotor);
 }
 
-short rotorCurrentPosition(ROTOR* rotor)
+short getRotorCurrentPosition(ROTOR* rotor)
 {
     return (rotor->currentPosition) + 1;
 }

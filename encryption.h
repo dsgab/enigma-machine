@@ -46,4 +46,11 @@ ROTOR* allocateRotor(void);
 
 void freeRotors(void);
 
-short rotorCurrentPosition(ROTOR* rotor);
+/** @brief Gets the current position of a given rotor.
+ * 
+ *  Used on the UI to get the rotor position and print it on the screen.
+ * 
+ *  @param rotor The rotor from where to get the current position from.
+ *  @return The current position of the rotor from 1 to 26.
+*/
+short getRotorCurrentPosition(ROTOR* rotor);
