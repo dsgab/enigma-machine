@@ -18,9 +18,9 @@ short secondRotorOffsetOut[26] = {0, 8, 13, 25, 21, 17, 11, 4, 23, 18, 19, 25, 2
 short thirdRotorOffsetIn[26] = {1, 2, 3, 4, 5, 6, 22, 8, 9, 10, 13, 10, 13, 0, 10, 15, 18, 5, 14, 7, 16, 17, 24, 21, 18, 15};
 short thirdRotorOffsetOut[26] = {19, 25, 4, 24, 11, 23, 12, 22, 8, 21, 10, 20, 9, 0, 11, 18, 8, 17, 5, 16, 2, 16, 21, 13, 16, 13};
 short lettersToReflect[26] = {24, 17, 20, 7, 16, 18, 11, 3, 15, 23, 13, 6, 14, 10, 12, 8, 4, 1, 5, 25, 2, 22, 21, 9, 0, 19};
-short firstRotorNotch = 0;
-short secondRotorNotch = 0;
-short thirdRotorNotch = 0;
+short firstRotorNotch = 17;
+short secondRotorNotch = 5;
+short thirdRotorNotch = 22;
 
 char encryptLetter(char letter)
 {
