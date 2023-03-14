@@ -24,6 +24,7 @@ void openOutputFile(void)
 
 void closeOutputFile(void)
 {
+    fputs("\n", encryptionOutputFile);
     if(fclose(encryptionOutputFile) == EOF) puts("Output file could not be closed.");
 }
 
