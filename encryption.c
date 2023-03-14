@@ -81,9 +81,9 @@ void returnThroughRotor(ROTOR* rotor)
     changeEncryptedLetter(rotor->outLettersToAdvance[calculateLetterPosition(rotor->currentPosition, currentEncryptedLetter)]);
 }
 
-short calculateLetterPosition(short rotorCurrentPosition, char inputLetter)
+short calculateLetterPosition(short rotorCurrentPosition, char encryptedLetter)
 {
-    return (rotorCurrentPosition + indexInAlphabet(inputLetter)) % LETTER_COUNT;
+    return (rotorCurrentPosition + indexInAlphabet(encryptedLetter)) % LETTER_COUNT;
 }
 
 void changeEncryptedLetter(short offset)

@@ -36,7 +36,12 @@ void goThroughRotor(ROTOR* rotor);
 
 void returnThroughRotor(ROTOR* rotor);
 
-short calculateLetterPosition(short rotorCurrentPosition, char inputLetter);
+/** @brief Calculates the position of the letter based on the rotor position and the letter value.
+ *  @param rotorCurrentPosition The current position of the rotor.
+ *  @param encryptedLetter The current encrypted letter.
+ *  @return The position of the letter.
+*/
+short calculateLetterPosition(short rotorCurrentPosition, char encryptedLetter);
 
 void changeEncryptedLetter(short offset);
 
