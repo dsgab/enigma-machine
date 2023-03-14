@@ -40,7 +40,11 @@ short calculateLetterPosition(short rotorCurrentPosition, char inputLetter);
 
 void changeEncryptedLetter(short offset);
 
-char reflectLetter(char letterToBeReflected);
+/** @brief Changes the letter based on the reflector array.
+ *  @param letterToBeReflected The letter to be reflected.
+ *  @return Void.
+*/
+void reflectLetter(char letterToBeReflected);
 
 ROTOR* allocateRotor(void);
 

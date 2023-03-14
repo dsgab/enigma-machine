@@ -26,7 +26,7 @@ char encryptLetter(char letter)
 {
     currentEncryptedLetter = letter;
     goThroughRotors(firstRotor, secondRotor, thirdRotor);
-    currentEncryptedLetter = reflectLetter(currentEncryptedLetter);
+    reflectLetter(currentEncryptedLetter);
     returnThroughRotors(thirdRotor, secondRotor, firstRotor);
     rotateRotor(firstRotor);
     return currentEncryptedLetter;
@@ -95,12 +95,13 @@ void changeEncryptedLetter(short offset)
     currentEncryptedLetter += letterValue;
 }
 
-char reflectLetter(char letterToBeReflected)
+void reflectLetter(char letterToBeReflected)
 {
     int letterValue = indexInAlphabet(letterToBeReflected);
     letterToBeReflected -= letterValue;
     letterValue = lettersToReflect[letterValue];
-    return letterToBeReflected += letterValue;
+    letterToBeReflected += letterValue;
+    currentEncryptedLetter = letterToBeReflected;
 }
 
 ROTOR* allocateRotor(void)
