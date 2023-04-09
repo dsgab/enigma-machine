@@ -21,7 +21,7 @@ void printKeyboardMenu(void)
     printNewLine();
     printNewLine();
     printf("Encrypted word: %s\n", word);
-    puts("Press space to write a new word.\nPress enter to write a new message.\nPress ESC to save and quit.");
+    puts("Press space to write a new word.\nPress enter to write a new message.\nPress ESC to save and quit to the main menu.");
 }
 
 void printRotors(void)
