@@ -25,10 +25,10 @@ short thirdRotorNotch = 22;
 char encryptLetter(char letter)
 {
     currentEncryptedLetter = letter;
-    goThroughRotors(firstRotor, secondRotor, thirdRotor);
+    rotateRotor(thirdRotor);
+    goThroughRotors(thirdRotor, secondRotor, firstRotor);
     reflectLetter(currentEncryptedLetter);
-    returnThroughRotors(thirdRotor, secondRotor, firstRotor);
-    rotateRotor(firstRotor);
+    returnThroughRotors(firstRotor, secondRotor, thirdRotor);
     return currentEncryptedLetter;
 }
 
