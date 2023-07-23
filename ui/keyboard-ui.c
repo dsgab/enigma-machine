@@ -28,7 +28,7 @@ void printRotors(void)
 {
     puts("Rotors positions:");
     printf("\n           ");
-    printf("%2d    %2d    %2d\n", getRotorCurrentPosition(thirdRotor), getRotorCurrentPosition(secondRotor), getRotorCurrentPosition(firstRotor));
+    printf("%2d    %2d    %2d\n", getRotorCurrentPosition(firstRotor), getRotorCurrentPosition(secondRotor), getRotorCurrentPosition(thirdRotor));
     printNewLine();
 }
 
