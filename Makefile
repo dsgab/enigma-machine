@@ -17,3 +17,5 @@ input.o: input.c input.h
 encryption.o: encryption.c encryption.h
 clean:
 	rm *.o enigma
+debug: $(PRODUCTOBJS)
+	gcc -g -o debug $(PRODUCTOBJS)
