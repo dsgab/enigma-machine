@@ -48,7 +48,7 @@ int checkMainMenuInput(void)
 void goToKeyboard(void)
 {
     initializeRotors();
-    while(1)
+    while(true)
     {
         printKeyboardMenu();
         if(checkKeyboardInput() == EXIT_KEYBOARD) break;
