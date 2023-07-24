@@ -32,16 +32,3 @@ void changeCursorVisibility(enum cursorState state)
             break;
     }
 }
-
-void changeLetterVisibility(enum letterVisibility visibility)
-{
-    switch(visibility)
-    {
-        case INVISIBLE:
-            printf(BLACK);
-            break;
-        case VISIBLE:
-            printf(RESET_COLOR);
-            break;
-    }
-}

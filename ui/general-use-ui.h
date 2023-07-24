@@ -9,7 +9,6 @@
 #define BLACK "\033[30m"
 
 enum cursorState { DISAPPEAR, REAPPEAR };
-enum letterVisibility { VISIBLE, INVISIBLE };
 
 /** @brief Prints a new line character to the stdout.
  *  @return Void.
@@ -35,9 +34,3 @@ void clearScreen(void);
  *  @return Void.
 */
 void changeCursorVisibility(enum cursorState state);
-
-/** @brief Changes the visibility of the next printed characters.
- *  @param visibility What visibility to change to; either "VISIBLE" or "INVISIBLE".
- *  @return Void.
-*/
-void changeLetterVisibility(enum letterVisibility visibility);
