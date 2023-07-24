@@ -10,8 +10,8 @@
 #include "../input.h"
 #include "../encryption.h"
 
-char* keyboardLayoutRows[] = {"QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"};    /* Array of strings containing the QWERTY keyboard layout rows */
-unsigned char keyboardLayoutRowOffsets[] = {0, 2, 6};   /* Number of spaces in the beginning of each keyboard row */
+const char* keyboardLayoutRows[] = {"QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"};    /* Array of strings containing the QWERTY keyboard layout rows */
+const unsigned char keyboardLayoutRowOffsets[] = {0, 2, 6};   /* Number of spaces in the beginning of each keyboard row */
 
 void printKeyboardMenu(void)
 {
