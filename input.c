@@ -104,11 +104,9 @@ void resetWord(void)
 
 char getInput(void)
 {
-    changeLetterVisibility(INVISIBLE);
     char answer = 'a';
-    system("/bin/stty raw");
+    system("/bin/stty raw -echo");
     answer = getc(stdin);
-    system("/bin/stty cooked");
-    changeLetterVisibility(VISIBLE);
+    system("/bin/stty cooked echo");
     return answer;
 }
