@@ -6,6 +6,8 @@
 
 #pragma once
 
+#define ALPHABET_SIZE 26
+
 typedef struct _ROTOR
 {
     short* inLettersToAdvance;

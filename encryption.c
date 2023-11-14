@@ -6,8 +6,6 @@
 #include "encryption.h"
 #include "strings.h"
 
-#define ALPHABET_SIZE 26
-
 char currentEncryptedLetter;
 ROTOR* firstRotor = NULL;
 ROTOR* secondRotor = NULL;
