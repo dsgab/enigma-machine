@@ -11,6 +11,7 @@
 int main(void)
 {
     changeCursorVisibility(DISAPPEAR);
+    checkSettingsFile();
     openOutputFile();
     initializeRotors();
     debugFile = fopen(debugFileName, "w");

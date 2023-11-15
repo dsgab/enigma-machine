@@ -20,6 +20,14 @@ void openOutputFile(void);
 */
 void closeOutputFile(void);
 
+void checkSettingsFile(void);
+
+void createDefaultSettingsFile(void);
+
+char** getCurrentRotorsInfo(void);
+
+char* getCurrentRotorInfo(int rotorNumber);
+
 /** @brief Starts wrigin a new message to the output file.
  *  @return Void.
 */
