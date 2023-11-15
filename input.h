@@ -16,15 +16,18 @@ extern char word[300];
 extern char lastLetter;
 
 /** @brief Checks the last user input when in the keyboard and calls functions accordingly.
- *  @return Void.
+ *  @return Escape ascii number (27) if escape key is pressed, else returns 0.
 */
 int checkKeyboardInput(void);
 
 /** @brief Checks the last user input when in the main menu and calls functions accordingly.
- *  @return Void.
+ *  @return Escape ascii number (27) if escape key is pressed, else returns 0.
 */
 int checkMainMenuInput(void);
 
+/** @brief Checks the last user input when in the settings menu and calls functions accordingly.
+ *  @return Escape ascii number (27) if escape key is pressed, else returns 0.
+*/
 int checkSettingsInput(void);
 
 /** @brief Loops the printKeyboardMenu and the checkKeyboardInput functions.
@@ -37,14 +40,23 @@ void goToKeyboard(void);
 */
 void goToSettings(void);
 
+/** @brief Loops the printRotorSettingsScreen and checkSettingsInput functions.
+ *  @return Void.
+*/
 void goToRotorSettings(void);
 
+/** @brief Loops the printPlugboardSettingsScreen and getInput functions.
+ *  @return Void.
+*/
 void goToPlugboardSettings(void);
 
+/** @brief Loops the printKeyboardSettingsScreen and getInput functions.
+ *  @return Void.
+*/
 void goToKeyboardSettings(void);
 
 /** @brief Save the last word and starts quitting the program.
- *  @return Void.
+ *  @return Escape ascii number (27).
 */
 int saveAndQuitLoop(void);
 
