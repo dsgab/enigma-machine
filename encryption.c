@@ -24,17 +24,16 @@ char encryptLetter(char letter)
 
 void initializeRotors(void)
 {
-    initializeRotor(&firstRotor, firstRotorOffsetIn, firstRotorOffsetOut, NULL, firstRotorNotch);
-    initializeRotor(&secondRotor, secondRotorOffsetIn, secondRotorOffsetOut, firstRotor, secondRotorNotch);
-    initializeRotor(&thirdRotor, thirdRotorOffsetIn, thirdRotorOffsetOut, secondRotor, thirdRotorNotch);
+    char **rotorsInfo = getCurrentRotorsInfo();
+    initializeRotor(&firstRotor, rotorsInfo[0], NULL);
+    initializeRotor(&secondRotor, rotorsInfo[1], firstRotor);
+    initializeRotor(&thirdRotor, rotorsInfo[2], secondRotor);
 }
 
-void initializeRotor(ROTOR** rotor, short* rotorOffsetIn, short* rotorOffsetOut, ROTOR* nextRotor, short notchPosition)
+void initializeRotor(ROTOR** rotor, char* rotorInfo, ROTOR* nextRotor)
 {
     ROTOR* temporaryRotor = allocateRotor();
-    temporaryRotor->inLettersToAdvance = rotorOffsetIn;
-    temporaryRotor->outLettersToAdvance = rotorOffsetOut;
-    temporaryRotor->currentPosition = 0;
+    setRotor(temporaryRotor, getName(rotorInfo), getLetters(rotorInfo), getNotch(rotorInfo));
     temporaryRotor->nextRotor = nextRotor;
     temporaryRotor->notchPosition = notchPosition;
     *rotor = temporaryRotor;

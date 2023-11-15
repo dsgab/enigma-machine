@@ -35,10 +35,8 @@ void initializeRotors(void);
 
 /** @brief Allocates and initializes a single rotor.
  *  @param rotor The address of the rotor pointer.
- *  @param rotorOffsetIn The array of offsets of the rotor for a letter going for the first time through it.
- *  @param rotorOffsetOut The array of offsets of the rotor for a letter going for the second time through it.
+ *  @param rotorInfo The line of the .settings.txt file containing the rotor's name, notch position and letters order.
  *  @param nextRotor The rotor to be rotated when this rotor hits its notch.
- *  @param notchPosition The position of the notch.
  *  @return Void.
 */
 void initializeRotor(ROTOR** rotor, short* rotorOffsetIn, short* rotorOffsetOut, ROTOR* nextRotor, short notchPosition);
