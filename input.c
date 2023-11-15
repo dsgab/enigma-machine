@@ -9,6 +9,7 @@
 #include "file-operations.h"
 #include "./ui/general-use-ui.h"
 #include "encryption.h"
+#include "./ui/settings-ui.h"
 
 #define ESCAPE_KEY 27
 #define ESPACE_KEY 32
@@ -45,6 +46,25 @@ int checkMainMenuInput(void)
     return 0;
 }
 
+int checkSettingsInput(void)
+{
+    switch(getInput())
+    {
+        case '1':
+            goToRotorSettings();
+            break;
+        case '2':
+            goToPlugboardSettings();
+            break;
+        case '3':
+            goToKeyboardSettings();
+            break;
+        case ESCAPE_KEY:
+            return EXIT_SETTINGS;
+    }
+    return 0;
+}
+
 void goToKeyboard(void)
 {
     while(true)
@@ -56,9 +76,39 @@ void goToKeyboard(void)
 
 void goToSettings(void)
 {
-    clearScreen();
-    puts("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
-    getInput();
+    while(true) /* Change loop later to do while instead of while */
+    {
+        printSettingsScreen();
+        if(checkSettingsInput() == EXIT_SETTINGS) break;
+    }
+}
+
+void goToRotorSettings(void)
+{
+    while(true)
+    {
+        printRotorSettingsScreen();
+        if(getInput() == ESCAPE_KEY) break;
+    }
+}
+
+void goToPlugboardSettings(void)
+{
+    do
+    {
+        printPlugboardSettingsScreen();
+    }
+    while(getInput() != ESCAPE_KEY);
+    
+}
+
+void goToKeyboardSettings(void)
+{
+    do
+    {
+        printKeyboardSettingsScreen();
+    }
+    while(getInput() != ESCAPE_KEY);
 }
 
 int saveAndQuitLoop(void)

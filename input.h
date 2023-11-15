@@ -8,6 +8,7 @@
 #pragma once
 
 #define EXIT_KEYBOARD 1
+#define EXIT_SETTINGS 1
 #define EXIT_MAIN_MENU 1
 
 extern int messageWordCount;
@@ -24,6 +25,8 @@ int checkKeyboardInput(void);
 */
 int checkMainMenuInput(void);
 
+int checkSettingsInput(void);
+
 /** @brief Loops the printKeyboardMenu and the checkKeyboardInput functions.
  *  @return Void.
 */
@@ -33,6 +36,12 @@ void goToKeyboard(void);
  *  @return Void.
 */
 void goToSettings(void);
+
+void goToRotorSettings(void);
+
+void goToPlugboardSettings(void);
+
+void goToKeyboardSettings(void);
 
 /** @brief Save the last word and starts quitting the program.
  *  @return Void.
