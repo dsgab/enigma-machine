@@ -10,16 +10,7 @@ char currentEncryptedLetter;
 ROTOR* firstRotor = NULL;
 ROTOR* secondRotor = NULL;
 ROTOR* thirdRotor = NULL;
-short firstRotorOffsetIn[ALPHABET_SIZE] = {4, 9, 10, 2, 7, 1, 23, 9, 13, 16, 3, 8, 2, 9, 10, 18, 7, 3, 0, 22, 6, 13, 5, 20, 4, 10};
-short firstRotorOffsetOut[ALPHABET_SIZE] = {20, 21, 22, 3, 22, 24, 25, 8, 13, 16, 17, 19, 16, 23, 24, 4, 17, 6, 0, 18, 23, 13, 17, 19, 16, 10};
-short secondRotorOffsetIn[ALPHABET_SIZE] = {0, 8, 1, 7, 14, 3, 11, 13, 15, 18, 1, 22, 10, 6, 24, 13, 0, 15, 7, 20, 21, 3, 9, 24, 16, 5};
-short secondRotorOffsetOut[ALPHABET_SIZE] = {0, 8, 13, 25, 21, 17, 11, 4, 23, 18, 19, 25, 2, 6, 10, 5, 0, 15, 12, 20, 13, 2, 16, 11, 23, 19};
-short thirdRotorOffsetIn[ALPHABET_SIZE] = {1, 2, 3, 4, 5, 6, 22, 8, 9, 10, 13, 10, 13, 0, 10, 15, 18, 5, 14, 7, 16, 17, 24, 21, 18, 15};
-short thirdRotorOffsetOut[ALPHABET_SIZE] = {19, 25, 4, 24, 11, 23, 12, 22, 8, 21, 10, 20, 9, 0, 11, 18, 8, 17, 5, 16, 2, 16, 21, 13, 16, 13};
 short lettersToReflect[ALPHABET_SIZE] = {24, 17, 20, 7, 16, 18, 11, 3, 15, 23, 13, 6, 14, 10, 12, 8, 4, 1, 5, 25, 2, 22, 21, 9, 0, 19};
-short firstRotorNotch = 17;
-short secondRotorNotch = 5;
-short thirdRotorNotch = 22;
 
 char encryptLetter(char letter)
 {
