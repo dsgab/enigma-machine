@@ -55,7 +55,6 @@ void createDefaultSettingsFile(void)
 
 char** getCurrentRotorsInfo(void)
 {
-    /* TALVEZ FAZER ESSA FUNÇÃO RETORNAR SÓ AS 3 LINHAS COM AS INFORMAÇÕES DOS TRES ROTORES E DELETAR A STRUCT "NAME_AND_LETTERS" */
     char **rotorsInfo = malloc(3 * sizeof(char*));
     settingsFile = fopen(settingsFileName, "r");
     for(int i = 0; i < 3; i++)
