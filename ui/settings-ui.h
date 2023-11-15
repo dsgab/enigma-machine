@@ -8,3 +8,9 @@
 #pragma once
 
 void printSettingsScreen(void);
+
+void printRotorSettingsScreen(void);
+
+void printPlugboardSettingsScreen(void);
+
+void printKeyboardSettingsScreen(void);
