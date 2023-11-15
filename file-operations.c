@@ -46,11 +46,11 @@ void createDefaultSettingsFile(void)
     fputs("1 17 I EKMFLGDQVZNTOWYHXUSPAIBRCJ\n", settingsFile);
     fputs("2 05 II AJDKSIRUXBLHWTMCQGZNPYFVOE\n", settingsFile);
     fputs("3 22 III BDFHJLCPRTXVZNYEIWGAKMUSQO\n", settingsFile);
-    fputs("0 1 IV ESOVPZJAYQUIRHXLNFTGKDCMWB\n", settingsFile);
-    fputs("0 1 V VZBRGITYUPSDNHLXAWMJQOFECK\n", settingsFile);
-    fputs("0 1 VI JPGVOUMFYQBENHZRDKASXLICTW\n", settingsFile);
-    fputs("0 1 VII NZJHGRCXMYSWBOUFAIVLPEKQDT\n", settingsFile);
-    fputs("0 1 VIII FKQHTLXOCBJSPDZRAMEWNIUYGV\n", settingsFile);
+    fputs("0 10 IV ESOVPZJAYQUIRHXLNFTGKDCMWB\n", settingsFile);
+    fputs("0 26 V VZBRGITYUPSDNHLXAWMJQOFECK\n", settingsFile);
+    fputs("0 13 VI JPGVOUMFYQBENHZRDKASXLICTW\n", settingsFile);
+    fputs("0 13 VII NZJHGRCXMYSWBOUFAIVLPEKQDT\n", settingsFile);
+    fputs("0 13 VIII FKQHTLXOCBJSPDZRAMEWNIUYGV\n", settingsFile);
 }
 
 char** getCurrentRotorsInfo(void)
