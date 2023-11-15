@@ -5,6 +5,7 @@
 #include <stdbool.h>
 #include "encryption.h"
 #include "strings.h"
+#include "file-operations.h"
 
 char currentEncryptedLetter;
 ROTOR* firstRotor = NULL;
@@ -35,8 +36,93 @@ void initializeRotor(ROTOR** rotor, char* rotorInfo, ROTOR* nextRotor)
     ROTOR* temporaryRotor = allocateRotor();
     setRotor(temporaryRotor, getName(rotorInfo), getLetters(rotorInfo), getNotch(rotorInfo));
     temporaryRotor->nextRotor = nextRotor;
-    temporaryRotor->notchPosition = notchPosition;
     *rotor = temporaryRotor;
+}
+
+void setRotor(ROTOR* rotor, char* name, char* letters, short notchPosition)
+{
+    rotor->name = name;
+    rotor->inLettersToAdvance = calculateOffsetIn(letters);
+    rotor->outLettersToAdvance = calculateOffsetOut(letters);
+    rotor->currentPosition = 0;
+    rotor->notchPosition = notchPosition;
+}
+
+char* getName(char* rotorInfo)
+{
+    char *position, *name = NULL;
+    int nameSize = 0;
+    if(!rotorInfo) return NULL;
+    rotorInfo += 5;
+    position = rotorInfo;
+    while(*position != ' ') position++;
+    nameSize = position - rotorInfo;
+    name = (char*) malloc(nameSize * sizeof(char));
+    strncpy(name, rotorInfo, nameSize);
+    return name;
+}
+
+short getNotch(char* rotorInfo)
+{
+    short notch;
+    char* tempNotch = (char*) malloc(2 * sizeof(char));
+    strncpy(tempNotch, rotorInfo+2, 2);
+    notch = atoi(tempNotch);
+    return notch;
+}
+
+char* getLetters(char* rotorInfo)
+{
+    char *startPosition = rotorInfo + 5, *letters = (char*) malloc(ALPHABET_SIZE * sizeof(char));
+    while(*startPosition != ' ') startPosition++;
+    startPosition++;
+    strncpy(letters, startPosition, ALPHABET_SIZE);
+    return letters;
+}
+
+short* calculateOffsetIn(char* rotorCharacters)
+{
+    if(strlen(rotorCharacters) != ALPHABET_SIZE) return NULL;
+    char reference[ALPHABET_SIZE+1] = "abcdefghijklmnopqrstuvwxyz";
+    if(strlen(reference) != ALPHABET_SIZE) printf("Reference size is wrong. Size: %ld\n", strlen(reference));
+    short* offset = malloc(sizeof(short) * ALPHABET_SIZE);
+    for(int i = 0; i < ALPHABET_SIZE; i++)
+    {
+        char currentLetter = tolower(rotorCharacters[i]);
+        short difference = currentLetter - reference[i];
+        offset[i] = difference >= 0 ? difference : difference + 26;
+    }
+    return offset;
+}
+
+short* calculateOffsetOut(char* rotorCharacters)
+{
+    if(strlen(rotorCharacters) != ALPHABET_SIZE) return NULL;
+    char reference[ALPHABET_SIZE+1] = "abcdefghijklmnopqrstuvwxyz";
+    if(strlen(reference) != ALPHABET_SIZE) printf("Reference size is wrong. Size: %ld\n", strlen(reference));
+    short* offset = malloc(sizeof(short) * ALPHABET_SIZE);
+    for(int i = 0; i < ALPHABET_SIZE; i++)
+    {
+        char currentLetter = reference[i];
+        int index = searchLetter(rotorCharacters, currentLetter, ALPHABET_SIZE);
+        if(index < 0)
+        {
+            puts("Algo deu errado.");
+            exit(1);
+        }
+        short difference = reference[index] - currentLetter;
+        offset[i] = difference >= 0 ? difference: difference + 26;
+    }
+    return offset;
+}
+
+int searchLetter(char* array, char letter, size_t size)
+{
+    for(unsigned int i = 0; i < size; i++)
+    {
+        if(tolower(array[i]) == tolower(letter)) return i;
+    }
+    return -1;
 }
 
 void rotateRotor(ROTOR* rotor)

@@ -10,6 +10,7 @@
 
 typedef struct _ROTOR
 {
+    char* name;
     short* inLettersToAdvance;
     short* outLettersToAdvance;
     short currentPosition;
@@ -39,7 +40,21 @@ void initializeRotors(void);
  *  @param nextRotor The rotor to be rotated when this rotor hits its notch.
  *  @return Void.
 */
-void initializeRotor(ROTOR** rotor, short* rotorOffsetIn, short* rotorOffsetOut, ROTOR* nextRotor, short notchPosition);
+void initializeRotor(ROTOR** rotor, char* rotorInfo, ROTOR* nextRotor);
+
+void setRotor(ROTOR* rotor, char* name, char* letters, short notchPosition);
+
+char* getName(char* rotorInfo);
+
+short getNotch(char* rotorInfo);
+
+char* getLetters(char* rotorInfo);
+
+short* calculateOffsetIn(char* rotorCharacters);
+
+short* calculateOffsetOut(char* rotorCharacters);
+
+int searchLetter(char* array, char letter, size_t size);
 
 /** @brief Rotates a given rotor.
  *  @param rotor The rotor to be rotated.
