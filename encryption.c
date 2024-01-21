@@ -195,3 +195,5 @@ short getRotorCurrentPosition(ROTOR* rotor)
 {
     return (rotor->currentPosition) + 1;
 }
+
+/* Teste */
